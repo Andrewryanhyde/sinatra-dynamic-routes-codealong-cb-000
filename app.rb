@@ -18,13 +18,10 @@ class App < Sinatra::Base
   get '/goodbye/:name' do
     @user_name = params[:name]
     "Goodbye, #{@user_name}!"
-    erb:'/goodbye/show.html'
   end
 
-  get '/multiply' do
-    @num_1 = params[:num1]
-    @num_2 = params[:num2]
-    @num_T = @num_1 + @num2
+  get '/multiply/:num1/num2' do
+    @num_T = params[:num1].to_i * params[:num2].to_i
     "#{@num_T}"
   end
 
