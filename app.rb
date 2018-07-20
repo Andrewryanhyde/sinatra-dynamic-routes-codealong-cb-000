@@ -18,6 +18,7 @@ class App < Sinatra::Base
   get '/goodbye/:name' do
     @user_name = params[:name]
     "goodbye, #{@user_name}!"
+    erb:'/goodbye/show.html'
   end
 
   get '/multiply' do
